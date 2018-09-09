@@ -1,15 +1,15 @@
-;; hide customize stuff
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
-
 ;; melpa
 (require 'package)
 
 ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
 (add-to-list 'package-archives (cons "melpa"  "https://melpa.org/packages/") t)
 ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-
 (package-initialize)
+
+;; hide customize stuff in separate file
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 
 ;; helm
 (require 'helm-config)
