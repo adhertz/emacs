@@ -12,3 +12,6 @@
 
 # Known projectile directories
 projectile-bookmarks.eld
+
+# projectile thing?
+/session.*
