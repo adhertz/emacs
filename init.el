@@ -38,3 +38,13 @@
 ;; better projectile find
 (require 'helm-projectile)
 (helm-projectile-on)
+
+(require 'clang-format)
+(add-hook 'c-mode-common-hook
+          (function (lambda ()
+                    (add-hook 'before-save-hook
+                              'clang-format-buffer))))
+
+(require 'exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
