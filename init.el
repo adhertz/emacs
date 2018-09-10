@@ -34,3 +34,7 @@
 
 ;; smart parens
 (require 'smartparens-config)
+
+;; better projectile find
+(require 'helm-projectile)
+(helm-projectile-on)

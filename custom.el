@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (smartparens better-defaults ag zenburn-theme helm helm-ag magit projectile))))
+    (smartparens better-defaults ag zenburn-theme helm helm-ag magit projectile helm-projectile))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
