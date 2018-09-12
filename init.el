@@ -44,6 +44,7 @@
           (function (lambda ()
                     (add-hook 'before-save-hook
                               'clang-format-buffer))))
+(setq clang-format-style-option "file")
 
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns x))
