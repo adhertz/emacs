@@ -30,6 +30,7 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;; magit
+(require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 (magit-define-popup-switch 'magit-log-popup ?F "First parent only." "--first-parent")
 
