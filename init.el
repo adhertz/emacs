@@ -44,11 +44,17 @@
 (helm-projectile-on)
 
 (require 'clang-format)
+(setq clang-format-style-option "file")
+
+(defun ap-format ()
+  "Run autopilot clang formatting."
+    (shell-command-to-string "git ap-format"))
+
+
 (add-hook 'c-mode-common-hook
           (function (lambda ()
                     (add-hook 'before-save-hook
-                              'clang-format-buffer))))
-(setq clang-format-style-option "file")
+                              'ap-format))))
 
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns x))
