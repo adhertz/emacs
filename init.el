@@ -48,13 +48,15 @@
 
 (defun ap-format ()
   "Run autopilot clang formatting."
-    (shell-command-to-string "git ap-format"))
+  (interactive)
+  (shell-command-to-string "git ap-format --force")
+  (revert-buffer t t))
 
-
-(add-hook 'c-mode-common-hook
-          (function (lambda ()
-                    (add-hook 'before-save-hook
-                              'ap-format))))
+(global-set-key (kbd "C-c a f") 'ap-format)
+;; (add-hook 'c-mode-common-hook
+;;           (function (lambda ()
+;;                     (add-hook 'after-save-hook
+;;                               'ap-format))))
 
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns x))
