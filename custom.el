@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company flycheck-rtags helm-rtags exec-path-from-shell clang-format smartparens better-defaults ag zenburn-theme helm helm-ag magit projectile helm-projectile))))
+    (ace-jump-mode company flycheck-rtags helm-rtags exec-path-from-shell clang-format smartparens better-defaults ag zenburn-theme helm helm-ag magit projectile helm-projectile))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

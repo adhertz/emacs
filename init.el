@@ -46,17 +46,23 @@
 (require 'clang-format)
 (setq clang-format-style-option "file")
 
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 (defun ap-format ()
   "Run autopilot clang formatting."
   (interactive)
-  (shell-command-to-string "git ap-format --force")
+  (shell-command-to-string "git clang-format --force")
   (revert-buffer t t))
 
 (global-set-key (kbd "C-c a f") 'ap-format)
-;; (add-hook 'c-mode-common-hook
-;;           (function (lambda ()
-;;                     (add-hook 'after-save-hook
-;;                               'ap-format))))
+(add-hook 'c-mode-common-hook
+          (function (lambda ()
+                    (add-hook 'after-save-hook
+                              'ap-format))))
+
+;; use c mode for dv files
+(add-to-list 'auto-mode-alist '("\\.dv\\'" . c++-mode))
 
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns x))
@@ -97,3 +103,6 @@
   (add-hook 'c-mode-common-hook #'setup-flycheck-rtags))
 
   ;;(setq rtags-display-result-backend 'helm)
+
+;; better yanking
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
